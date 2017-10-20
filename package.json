@@ -1,0 +1,22 @@
+{
+  "name": "shopping",
+  "version": "1.0.0",
+  "description": "nodejs lai de",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lijie1141/shopping.git"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "Rekin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lijie1141/shopping/issues"
+  },
+  "homepage": "https://github.com/lijie1141/shopping#readme"
+}
