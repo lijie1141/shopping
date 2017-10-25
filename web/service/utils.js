@@ -1,0 +1,69 @@
+angular.module('app')
+	.factory('utils', ['$ionicPopup','$ionicLoading', function ($ionicPopup, $ionicLoading){
+		var u = {
+			tips:{
+				showTips:function(msg, scope) {
+					var tips = $ionicPopup.show({
+						template:'<div style="text-align:center;">' + msg + '</div>',
+						title:'提示消息',
+						scope:scope,
+						buttons:[{
+							text:'确认',
+							type:'button-assertive',
+							onTap:function() {
+								tips.close();
+							}
+						}]
+					});
+				},
+
+				showLoadTips: function () {
+					$ionicLoading.show({
+						noBackdrop: true,
+						template: '<ion-spinner icon="lines"></ion-spinner>'
+					});
+					
+				},
+				hideLoadTips: function (){
+					$ionicLoading.hide();
+				}
+			},
+
+			//验证表单
+			validForm: {
+				//验证不为空
+				isNotEmpty: function(msg) {				
+					return msg == '' || msg == undefined ? false :true;
+				},
+				//验证邮箱格式
+				isEmail: function (email) {
+					var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+					return reg.test(email);
+
+				},
+
+				//手机号码
+				isPhone: function(phone) {
+					var reg = /^1[358]\d{9}$/;
+					return reg.test(phone);
+				},
+
+				//验证长度
+				isLength: function (msg, min, max) {
+					return msg.length >= min && msg.length <= max ? true : false;
+				},
+
+				//只能是‘_，数字，字母’
+				isNotOnlyW: function(msg) {
+					return /\W/.test(msg);
+				},
+
+				//验证两值相同
+				isEqual: function(a, b) {
+					return a === b ? true : false;
+				}
+			}
+		};
+
+		return u;
+	}])

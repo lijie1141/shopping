@@ -18,5 +18,16 @@
   "bugs": {
     "url": "https://github.com/lijie1141/shopping/issues"
   },
-  "homepage": "https://github.com/lijie1141/shopping#readme"
+  "homepage": "https://github.com/lijie1141/shopping#readme",
+  "devDependencies": {
+    "body-parser": "^1.18.2",
+    "crypto": "^1.0.1",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0",
+    "serve-favicon": "^2.4.5"
+  },
+  "dependencies": {
+    "q": "^1.5.1"
+  }
 }
